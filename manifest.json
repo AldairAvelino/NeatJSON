@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "NeatJSON",
+  "version": "1.0.0",
+  "description": "A beautiful and secure Chrome extension to format and explore raw JSON responses with customizable themes",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NeatJSON"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none';"
+  },
+  "icons": {
+    "16": "icons/neatjson.png",
+    "48": "icons/neatjson.png",
+    "128": "icons/neatjson.png"
+  }
+}
